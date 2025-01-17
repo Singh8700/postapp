@@ -7,7 +7,7 @@ import CreatePost from './pages/Posts/CreatePost'
 import OneByOnePost from './pages/Posts/onebyonepost'
 
 const Components = () => {
-  const [dataGet,setDataGet] = useState("")
+  const [dataGet,setDataGet] = useState()
   const navigate = useNavigate()
   useEffect(()=>{
     setDataGet(localStorage.getItem("loggedInUser"))
