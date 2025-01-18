@@ -15,13 +15,13 @@ const Components = () => {
   
   return (
     <Routes>
-        <Route path="/" element={<Navigate to="/user"/>}/>
-        <Route path="/user" element={<Home/>}/>
-        <Route path="/login" element={<Login/>}/>
-        <Route path="/signup" element={<SignUp/>}/>
+        <Route path="/" element={<Navigate to="/postapp/user"/>}/>
+        <Route path="/postapp/user" element={<Home/>}/>
+        <Route path="/postapp/login" element={<Login/>}/>
+        <Route path="/postapp/signup" element={<SignUp/>}/>
         <Route path={(dataGet)?"/*:id":navigate("/login")} element={<Home/>}/>
-        <Route path={(dataGet)?"/create_post":navigate("/login")} element={<CreatePost/>}/>
-        <Route path={(dataGet)?"/post/:postId":navigate("/login")} element={<OneByOnePost/>}/>
+        <Route path={(dataGet)?"/postapp/create_post":navigate("/postapp/login")} element={<CreatePost/>}/>
+        <Route path={(dataGet)?"/postapp/post/postapp:postId":navigate("/postapp/login")} element={<OneByOnePost/>}/>
     </Routes>
   )
 }
