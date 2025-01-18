@@ -38,7 +38,7 @@ const CreatePost = () => {
             handelError("Something want wrong")
         }
         try{
-            const url = "http://localhost:3030/auth/create_post"
+            const url = "https://postserver-tjeg.onrender.com/auth/create_post"
             const response = await fetch(url,{
                 // difne method
                 method:'POST',

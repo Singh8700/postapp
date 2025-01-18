@@ -33,7 +33,7 @@ const SignUp = () =>{
       return handelError("All feild required")
     }
     try{
-      const url = "http://localhost:3030/auth/signup"
+      const url = "https://postserver-tjeg.onrender.com/auth/signup"
       const response = await fetch(url,{
         method:'POST',
         headers:{

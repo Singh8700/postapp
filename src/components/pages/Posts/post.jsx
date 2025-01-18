@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import axios from 'axios'
+import { data } from 'autoprefixer'
 const Postview = () => {
     const [allPost, setAllPost] = useState([])
 
     const dataGet = async (e) => {
-        const url = "http://localhost:3030/api/post"
+        const url = "https://postserver-tjeg.onrender.com/api/post"
         const response = await axios.get(url)
         console.log(response.data)
         setAllPost(response.data)
@@ -14,6 +15,14 @@ const Postview = () => {
     useEffect(() => {
         dataGet()
     }, [])
+
+    if(!dataGet){
+        return(
+            <div className='flex justify-center items-center'>
+                <h1>Loading.........</h1>
+            </div>
+        )
+    }
 
     const truncateContent = (content, length) => {
         if (content.length > length) {

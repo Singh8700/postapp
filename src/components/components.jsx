@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import {  Navigate, Route, Routes, useNavigate } from 'react-router-dom'
+import { Route, Routes, useNavigate , Navigate} from 'react-router-dom'
 import Login from './pages/login/login'
 import SignUp from './pages/signup/signup'
 import Home from './pages/home/Home'
@@ -11,7 +11,7 @@ const Components = () => {
   const navigate = useNavigate()
   useEffect(()=>{
     setDataGet(localStorage.getItem("loggedInUser"))
-  },[navigate])
+  },[])
   
   return (
     <Routes>

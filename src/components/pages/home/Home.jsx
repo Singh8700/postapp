@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { Outlet, useNavigate } from 'react-router-dom'
-import { handelSuccess } from '../utils'
-import { ToastContainer } from 'react-toastify'
 import Navbar from './navbar'
 import Postview from '../Posts/post'
 
@@ -13,13 +11,12 @@ const Home = () =>{
     setLoggedInfo(localStorage.getItem('loggedInUser'))
   },[])
 
- 
 
 
 
   return(
     <>
-    <div className="header w-screen">
+    <div className="header w-screen mt-20">
       <Postview/>
       <Outlet/>
     </div>

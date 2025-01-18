@@ -36,7 +36,7 @@ const Login = () =>{
 try{
 
     // console.log(email,password)
-    const url = "http://localhost:3030/auth/login"
+    const url = "https://postserver-tjeg.onrender.com/auth/login"
     const response = await fetch(url,{
       // difne method
       method:'POST',
