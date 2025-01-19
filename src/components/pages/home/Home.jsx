@@ -16,7 +16,7 @@ const Home = () =>{
 
   return(
     <>
-    <div className="header w-screen mt-20">
+    <div className="w-[100vw] absolute top-[12%] md:top-[15%]">
       <Postview/>
       <Outlet/>
     </div>

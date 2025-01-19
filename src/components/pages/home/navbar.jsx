@@ -38,7 +38,7 @@ const autoClose = (e)=>{
   return (
     <>
         {/* nav section */}
-<nav class="bg-white border-gray-900 dark:bg-gray-900 w-screen absolute top-0 left-0 z-50">
+<nav class="bg-white border-gray-900 dark:bg-gray-900 w-[100vw] absolute top-0 left-0 z-50">
   <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 ">
     <Link to="/" class="flex items-center space-x-3 rtl:space-x-reverse">
         <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" />
@@ -58,7 +58,7 @@ const autoClose = (e)=>{
         <li>
     
         </li>
-        {(userData)?<div className='flex gap-3 mt-5 sm:flex-col sm:gap-5 md:flex-row'>
+        {(userData)?<div className='flex gap-3 sm:flex-col sm:gap-5 md:flex-row'>
           <li>
           <Link to="/account" class="block mr-5 ppy-2 px-3  text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" onClick={autoClose}>My account</Link>
         </li>
