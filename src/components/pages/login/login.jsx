@@ -57,7 +57,7 @@ try{
   await sessionStorage.setItem("id",id)
    await handelSuccess(msg)
     await  setTimeout(()=>{
-        navigate("/user")
+        navigate("/")
       },1000)
     }else{
       handelError(msg)

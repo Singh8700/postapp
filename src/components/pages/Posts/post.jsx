@@ -16,9 +16,9 @@ const Postview = () => {
         dataGet()
     }, [])
 
-    if(!allPost){
+    if(!allPost.length){
        return(
-        <div className='flex justify-center items-center'>
+        <div className='w-screen h-screen flex justify-center items-center'>
         <h1>Loading.........</h1>
         </div>
        )
@@ -40,7 +40,7 @@ const Postview = () => {
             {
                     allPost.map((item, index) => {
                         return (
-                            <div className="card w-full sm:w-[80%] sm:bg-red-500 m-auto flex justify-center items-center" key={index}>
+                            <div className="card w-full sm:w-[80%]  m-auto flex justify-center items-center" key={index}>
                                 {/* first card */}
                                 <p class="capitalize block w-[500px] h-[200px] overflow-hidden max-w-xlg p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
                                     <small className='text-zinc-200 flex justify-end capitalize'>
