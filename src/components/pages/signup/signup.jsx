@@ -47,8 +47,8 @@ const SignUp = () =>{
       if(success){
         handelSuccess(msg)
          await setTimeout(() => {
-          navigate("/login")
-        }, 3000);
+          navigate("/postapp/login")
+        }, 100);
       
       }else{
         handelError(msg)

@@ -63,11 +63,11 @@ const autoClose = (e)=>{
         </li>
         {(userData)?<div className='flex gap-3 sm:flex-col sm:gap-5 md:flex-row'>
           <li>
-          <Link to={`/account/${userId}`} class="block py-2 px-3  text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" onClick={autoClose}>My Post</Link>
+          <Link to={`/postapp/account/${userId}`} class="block py-2 px-3  text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" onClick={autoClose}>My Post</Link>
         </li>
         
         <li>
-          <Link to="/create_post" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" onClick={autoClose}>Create Post</Link>
+          <Link to="/postapp/create_post" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" onClick={autoClose}>Create Post</Link>
         </li>
 
             <li>
@@ -77,10 +77,10 @@ const autoClose = (e)=>{
         </div>:
         <div className='flex gap-2 md:flex-row sm:flex-col sm:gap-0'>
             <li>
-          <Link to="/login" class="block mr-5 py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" onClick={autoClose}>login</Link>
+          <Link to="/postapp/login" class="block mr-5 py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" onClick={autoClose}>login</Link>
         </li>
         <li>
-          <Link to="/signup" class="block py-2 px-3  py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" onClick={autoClose}>Create an Account</Link>
+          <Link to="/postapp/signup" class="block py-2 px-3  py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" onClick={autoClose}>Create an Account</Link>
         </li>    
         </div>}
       </ul>

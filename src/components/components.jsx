@@ -6,7 +6,7 @@ import Home from './pages/home/Home'
 import CreatePost from './pages/Posts/CreatePost'
 import OneByOnePost from './pages/Posts/onebyonepost'
 import UserPost from './pages/UserPost/UserPost'
-// import OneByOnePost from './pages/Posts/onebyonepost'
+import EditPost from './pages/Posts/EditPost'
 
 const Components = () => {
   const [dataGet,setDataGet] = useState()
@@ -24,14 +24,15 @@ const Components = () => {
   
   return (
     <Routes>
-      <Route path="/postapp" element={<Navigate to="/" />}/>
+      <Route path="/postapp" element={<Navigate to="/" />}/> 
         <Route path="/" element={<Home/>}/>
-        <Route path="/login" element={<Login/>}/>
-        <Route path='/create_post' element={<CreatePost/>}/>
-        <Route path="/signup" element={<SignUp/>}/>
+        <Route path="/postapp/login" element={<Login/>}/>
+        <Route path='/postapp/create_post' element={<CreatePost/>}/>
+        <Route path="/postapp/signup" element={<SignUp/>}/>
         <Route path={paths} element={<CreatePost/>}/>
         <Route path="/postapp/post/:postId" element={<OneByOnePost/>}/>
-        <Route path="/account/:id" element={<UserPost/>}/>
+        <Route path="/postapp/account/:id" element={<UserPost/>}/>
+        <Route path="/postapp/edit/:id" element={<EditPost />}/>
     </Routes>
   )
 }

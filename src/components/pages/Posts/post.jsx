@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { Link, useNavigate, useSearchParams } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 const Postview = () => {
     const [allPost, setAllPost] = useState([])
     const navigate = useNavigate()
-   
+   const [loginPath,setLoginPath] = useState("/")
     const truncateContent = (content, length) => {
         if (content.length > length) {
           return content.slice(0, length) + '...';  // Add ellipsis if content is too long
@@ -15,7 +15,7 @@ const Postview = () => {
 
       const likes = async(user,postId) =>{
         // console.log("clicked")
-        const url ="https://postserver-tjeg.onrender.com/api/likes"
+        const url ="http://localhost:3030/api/likes"
         await fetch(url,{
             method:"POST",
             headers:{
@@ -26,6 +26,7 @@ const Postview = () => {
                 "user":user
             })
         })
+        navigate("/postapp")
     }
     const dataGet = async (e) => {
         const url = "https://postserver-tjeg.onrender.com/api/post"
@@ -64,9 +65,10 @@ const Postview = () => {
                                     <Link to ={`/postapp/post/${item._id}`}  className='flex justify-end text-xs'>Read More</Link>
                                     </p>
                                     
-                                    <Link to="/" className='flex justify-start items-end hover:text-zinc-100' onClick={()=>likes(sessionStorage.getItem('id'),item._id)}>
+                                    <Link to={!sessionStorage.getItem("id")?"/postapp/login":"/postapp"} className='flex justify-start items-end hover:text-zinc-100' onClick={()=>likes(sessionStorage.getItem('id'),item._id)}>
                                         <span className='mr-2'>{item.likes.length}</span>
-                                        Link</Link>
+                                    {item.likes.length > 0?"Unlike":"Like"}
+                                    </Link>
 
                                 </p>
                             </div>
