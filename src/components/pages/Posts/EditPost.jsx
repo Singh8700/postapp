@@ -40,7 +40,7 @@ const EditPost = () => {
             handelError("Something want wrong")
         }
         try{
-            const url = `http://localhost:3030/auth/edit_post/${id}`
+            const url = `https://postserver-tjeg.onrender.com/auth/edit_post/${id}`
             const response = await fetch(url,{
                 // difne method
                 method:'POST',
