@@ -116,7 +116,7 @@ try{
           />
           <label htmlFor='password' className='relative left-[70%] mt-2 text-xs cursor-pointer' onClick={handelPassword}>{show}</label>
       </div>
-    <button type="submit" className='btn border bg-blue-400 hover:bg-zinc-600'>Login</button>
+    <button type="submit" className='btn border bg-blue-400 hover:bg-zinc-600 py-2 px-3'>Login</button>
     <span>
       Don't have an account
         <Link to="/signup"> Create an account</Link>

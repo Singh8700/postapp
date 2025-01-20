@@ -71,23 +71,23 @@ const CreatePost = () => {
 
 
     return (
-        <div className='create-post'>
+        <div className='create-post w-[100vw] '>
             <div className="main">
                 <h3>Welcome to <span className='text-green-300 capitalize '>{loggedUser}</span></h3>
             </div>
             {open ?
-                <div className={`form ${open?"flex":"hidden"}backdrop:blur-4 absolute w-screen float-start`}>
+                <div className={`form ${open?"flex":"hidden"} w-[100vw] backdrop:blur-4 flex-col float-start`}>
                     <div className="close flex justify-end m-10">
                         <button onClick={() => setOpen(false)}>close</button>
                     </div>
                     <form onSubmit={handelCreatePost}
-                        className='flex justify-center items-center flex-col gap-8 w-screen'>
+                        className='flex w-full justify-center items-center flex-col gap-8'>
                         <input
                             type="text"
                             name="title"
                             id="title"
                             onChange={handelOnChange}
-                            className='w-1/2 rounded-md bg-transparent'
+                            className='w-[85%] lg:w-[65%] rounded-md bg-transparent'
                             autoFocus
                             placeholder='Which your Title' />
                         <textarea
@@ -95,8 +95,8 @@ const CreatePost = () => {
                             id="post"
                             placeholder='Describe yourself'
                             onChange={handelOnChange}
-                            className='h-[200px] resize-none w-1/2 bg-transparent rounded-md'></textarea>
-                        <button type="submit" className='border '>Create Post</button>
+                            className='h-[200px] w-[85%] resize-none bg-transparent rounded-md'></textarea>
+                        <button type="submit" className='border py-3 px-4 bg-blue-400'>Create Post</button>
                     </form>
                     <ToastContainer/>
                 </div> 

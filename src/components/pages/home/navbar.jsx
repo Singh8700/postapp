@@ -3,12 +3,15 @@ import { Link, useNavigate } from 'react-router-dom'
 
 const Navbar = () => {
   const navigate = useNavigate()
+  const [userId,setUserId] = useState()
     const [userData,setUserData] = useState()
     const [autoHide,setAutoHide] = useState("hidden")
 
     useEffect(()=>{
         setUserData(localStorage.getItem("loggedInUser"))
+        setUserId(sessionStorage.getItem("id"))
         // alert(userData)
+        
     },[navigate])
 
 const handleAutoHide = (e)=>{
@@ -60,7 +63,7 @@ const autoClose = (e)=>{
         </li>
         {(userData)?<div className='flex gap-3 sm:flex-col sm:gap-5 md:flex-row'>
           <li>
-          <Link to="/account" class="block mr-5 ppy-2 px-3  text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" onClick={autoClose}>My account</Link>
+          <Link to={`/account/${userId}`} class="block py-2 px-3  text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" onClick={autoClose}>My Post</Link>
         </li>
         
         <li>

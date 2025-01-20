@@ -5,6 +5,7 @@ import SignUp from './pages/signup/signup'
 import Home from './pages/home/Home'
 import CreatePost from './pages/Posts/CreatePost'
 import OneByOnePost from './pages/Posts/onebyonepost'
+import UserPost from './pages/UserPost/UserPost'
 // import OneByOnePost from './pages/Posts/onebyonepost'
 
 const Components = () => {
@@ -26,9 +27,11 @@ const Components = () => {
       <Route path="/postapp" element={<Navigate to="/" />}/>
         <Route path="/" element={<Home/>}/>
         <Route path="/login" element={<Login/>}/>
+        <Route path='/create_post' element={<CreatePost/>}/>
         <Route path="/signup" element={<SignUp/>}/>
         <Route path={paths} element={<CreatePost/>}/>
         <Route path="/postapp/post/:postId" element={<OneByOnePost/>}/>
+        <Route path="/account/:id" element={<UserPost/>}/>
     </Routes>
   )
 }

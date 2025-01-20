@@ -1,17 +1,38 @@
 import React, { useEffect, useState } from 'react'
-import { Link, useSearchParams } from 'react-router-dom'
+import { Link, useNavigate, useSearchParams } from 'react-router-dom'
 import axios from 'axios'
 
 const Postview = () => {
     const [allPost, setAllPost] = useState([])
+    const navigate = useNavigate()
+   
+    const truncateContent = (content, length) => {
+        if (content.length > length) {
+          return content.slice(0, length) + '...';  // Add ellipsis if content is too long
+        }
+        return content;
+      };
 
+      const likes = async(user,postId) =>{
+        // console.log("clicked")
+        const url ="http://localhost:3030/api/likes"
+        await fetch(url,{
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify({
+                "id":postId,
+                "user":user
+            })
+        })
+    }
     const dataGet = async (e) => {
         const url = "https://postserver-tjeg.onrender.com/api/post"
         const response = await axios.get(url)
         // console.log(response.data)
         setAllPost(response.data)
     }
-
     useEffect(() => {
         dataGet()
     }, [])
@@ -25,14 +46,6 @@ const Postview = () => {
     }
    
 
-    const truncateContent = (content, length) => {
-        if (content.length > length) {
-          return content.slice(0, length) + '...';  // Add ellipsis if content is too long
-        }
-        return content;
-      };
-
-     
     
     return (
         <>
@@ -51,8 +64,8 @@ const Postview = () => {
                                     <Link to ={`/postapp/post/${item._id}`}  className='flex justify-end text-xs'>Read More</Link>
                                     </p>
                                     
-                                    <Link to="/" className='flex justify-start items-end hover:text-zinc-100'>
-                                        <span className='mr-2'>0</span>
+                                    <Link to="/" className='flex justify-start items-end hover:text-zinc-100' onClick={()=>likes(sessionStorage.getItem('id'),item._id)}>
+                                        <span className='mr-2'>{item.likes.length}</span>
                                         Link</Link>
 
                                 </p>
