@@ -8,7 +8,7 @@ const UserPost = () => {
     const [userId,setUserId] = useState([])
 
     const userInfo = async() =>{
-        const url = `http://localhost:3030/user/account/${id}`
+        const url = `https://postserver-tjeg.onrender.com/user/account/${id}`
         await fetch(url,{
             method:"pOST",
             param:id

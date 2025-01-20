@@ -15,7 +15,7 @@ const Postview = () => {
 
       const likes = async(user,postId) =>{
         // console.log("clicked")
-        const url ="http://localhost:3030/api/likes"
+        const url ="https://postserver-tjeg.onrender.com/api/likes"
         await fetch(url,{
             method:"POST",
             headers:{
