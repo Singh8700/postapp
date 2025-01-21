@@ -55,10 +55,10 @@ try{
    await localStorage.setItem("loggedInUser",name)
    await localStorage.setItem("token",token)
   await sessionStorage.setItem("id",id)
-   await handelSuccess(msg)
-    await  setTimeout(()=>{
-        navigate("/postapp")
-      },1000)
+   handelSuccess(msg)
+   await setTimeout(()=>{
+    navigate("/postapp")
+  },1000)
     }else{
       handelError(msg)
     }
@@ -122,7 +122,6 @@ try{
         <Link to="/signup"> Create an account</Link>
     </span>
     </form>
-    <ToastContainer/>
    </div>
    </div>
     </>

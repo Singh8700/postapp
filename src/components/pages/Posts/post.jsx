@@ -15,8 +15,11 @@ const Postview = () => {
 
       const likes = async(user,postId) =>{
         // console.log("clicked")
+        if(!user){
+            navigate("/postapp/login")
+        }else{
         const url ="https://postserver-tjeg.onrender.com/api/likes"
-        await fetch(url,{
+       const data =  await fetch(url,{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"
@@ -26,7 +29,10 @@ const Postview = () => {
                 "user":user
             })
         })
-        navigate("/postapp")
+        setTimeout(()=>{
+            navigate("/postapp")
+          },1000)
+    }
     }
     const dataGet = async (e) => {
         const url = "https://postserver-tjeg.onrender.com/api/post"

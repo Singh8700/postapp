@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Outlet, useNavigate } from 'react-router-dom'
-import Navbar from './navbar'
+import { Outlet} from 'react-router-dom'
 import Postview from '../Posts/post'
 
 

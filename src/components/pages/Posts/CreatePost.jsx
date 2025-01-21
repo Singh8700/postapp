@@ -101,7 +101,6 @@ const CreatePost = () => {
                     </form>
                     
                 </div> 
-                <ToastContainer/>
                 </>
                 :
                 <></>}

@@ -137,7 +137,6 @@ const SignUp = () =>{
         <Link to="/login" className='ml-4'>Login</Link>
     </span>
     </form>
-    <ToastContainer/>
    </div>
     </div>
     </>

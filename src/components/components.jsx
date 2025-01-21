@@ -8,6 +8,7 @@ import OneByOnePost from './pages/Posts/onebyonepost'
 import UserPost from './pages/UserPost/UserPost'
 import EditPost from './pages/Posts/EditPost'
 
+
 const Components = () => {
   const [dataGet,setDataGet] = useState()
   const [paths,setPaths] =useState("/login")
@@ -16,11 +17,7 @@ const Components = () => {
     setDataGet(localStorage.getItem("loggedInUser"))
   },[navigate])
 
-  const handelPaths = () =>{
-    if(dataGet){
-      return setPaths("/create_post")
-    }
-  }
+ 
   
   return (
     <Routes>
@@ -33,6 +30,7 @@ const Components = () => {
         <Route path="/postapp/post/:postId" element={<OneByOnePost/>}/>
         <Route path="/postapp/account/:id" element={<UserPost/>}/>
         <Route path="/postapp/edit/:id" element={<EditPost />}/>
+       
     </Routes>
   )
 }
